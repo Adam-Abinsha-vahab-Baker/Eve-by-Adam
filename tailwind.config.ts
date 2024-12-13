@@ -12,7 +12,7 @@ const config: Config = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+            'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -62,24 +62,22 @@ const config: Config = {
         },
       },
       keyframes: {
+        gradient: {
+          '0%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
+          '100%': { 'background-position': '0% 50%' },
+        },
         'accordion-down': {
-          from: {
-            height: '0',
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)',
-          },
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
         },
         'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)',
-          },
-          to: {
-            height: '0',
-          },
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
         },
       },
       animation: {
+        gradient: 'gradient 10s ease infinite',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
@@ -87,4 +85,5 @@ const config: Config = {
   },
   plugins: [require('tailwindcss-animate')],
 };
+
 export default config;

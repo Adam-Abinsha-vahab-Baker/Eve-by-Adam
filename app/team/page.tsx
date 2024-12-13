@@ -1,14 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardDescription,CardHeader,CardTitle,CardContent,CardFooter} from "@/components/ui/card";
+import { Card, CardDescription, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Brain, Heart, Lightbulb, Rocket, PencilRuler } from 'lucide-react';
-
 import Link from "next/link";
 
 const teamMembers = [
     {
         name: "Adam Abinsha Vahab Baker",
         role: "Creator and Founder",
-        description: "'I dont think i can do this!' - After i did it.",
+        description: "'I don't think I can do this!' - After I did it.",
         icon: Rocket,
     },
     {
@@ -18,40 +17,28 @@ const teamMembers = [
         icon: Lightbulb,
     },
     {
-        name: "Alansha Vahab Baker",
-        role: "Project Manager",
-        description: "Orchestrating our team's efforts to bring Eve to life",
-        icon: Brain,
-    },
-    {
         name: "Hannah Baker",
         role: "Creative Director",
         description: "Infusing empathy and compassion into our AI-driven healthcare approach",
         icon: Heart,
     },
     {
-        name: "Edita Garbulyte",
+        name: "Alansha Vahab Baker",
         role: "Project Manager",
-        description: "Supporting the core vision!",
-        icon: Heart,
+        description: "Orchestrating our team's efforts to bring Eve to life",
+        icon: Brain,
+    },
+    {
+        name: "Edita Garbulyte",
     },
     {
         name: "Ashik Noushad",
-        role: "Project Manager",
-        description: "Supporting the core vision!",
-        icon: Heart,
     },
     {
         name: "Alia Ansari",
-        role: "Art",
-        description: "Making it less boring!",
-        icon: PencilRuler,
     },
     {
         name: "Willy Orland Bezerra",
-        role: "Support",
-        description: "Making it less boring!",
-        icon: PencilRuler,
     },
 ];
 
@@ -65,8 +52,26 @@ export default function TeamPage() {
                     </Link>
                 </Button>
                 <h1 className="text-4xl font-bold text-center mb-12 text-primary">Meet the Minds Behind Eve</h1>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {teamMembers.map((member) => (
+
+                {/* Adam's Section */}
+                <div className="mb-12">
+                    <Card className="bg-card hover:shadow-lg transition-shadow">
+                        <CardHeader className="text-center">
+                            <div className="mx-auto bg-primary/10 rounded-full p-4 w-24 h-24 flex items-center justify-center mb-4">
+                                <Rocket className="h-12 w-12 text-primary" />
+                            </div>
+                            <CardTitle className="text-3xl font-bold">Adam Abinsha Vahab Baker</CardTitle>
+                            <CardDescription className="text-xl font-medium text-muted-foreground">Creator and Founder</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-center text-muted-foreground">'I don't think I can do this!' - After I did it.</p>
+                        </CardContent>
+                    </Card>
+                </div>
+
+                {/* Sreehari, Hannah, Alansha */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    {teamMembers.slice(1, 4).map((member) => (
                         <Card key={member.name} className="bg-card hover:shadow-lg transition-shadow">
                             <CardHeader className="text-center">
                                 <div className="mx-auto bg-primary/10 rounded-full p-3 w-16 h-16 flex items-center justify-center mb-4">
@@ -81,8 +86,17 @@ export default function TeamPage() {
                         </Card>
                     ))}
                 </div>
+
+                {/* List of Remaining Members */}
+                <div>
+                    <h2 className="text-2xl font-bold text-center mb-4 text-primary">Other Team Members</h2>
+                    <ul className="text-center space-y-2">
+                        {teamMembers.slice(4).map((member) => (
+                            <li key={member.name} className="text-lg font-medium text-muted-foreground">{member.name}</li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </main>
     );
 }
-

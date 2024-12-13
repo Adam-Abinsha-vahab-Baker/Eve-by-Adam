@@ -63,7 +63,7 @@ export default function EveWelcome() {4
     const handleFileView = (fileId: string) => {
         // Implement file viewing logic here
         // This could open a modal, navigate to a new page, or trigger a download
-        window.open(`http://localhost:5000/files/${fileId}`, '_blank');
+        window.open(`http://localhost:5000/preview/${fileId}`, '_blank');
     };
 
     useEffect(() => {
@@ -98,7 +98,14 @@ export default function EveWelcome() {4
                     <section className="text-center">
                         <TextGenerateEffect className="text-3xl font-bold mb-4" words={"Welcome to Eve"}/>
                         <p className="text-xl mb-6">
-                            Your personal AI health assistant, here to help you understand and improve your well-being.
+                            You upload your health data files here (Test results,Medication Prescriptions, Scan
+                            results).
+                        </p>
+                        <p className="text-xl mb-6">
+                            Click on the upload button to open the file explorer.
+                        </p>
+                        <p className="text-xl mb-6">
+                            Click the view files button to view your uploaded files.
                         </p>
 
                         {/* Upload Button */}
@@ -185,7 +192,7 @@ export default function EveWelcome() {4
                                                 <CardHeader>
                                                     <CardTitle className="flex items-center gap-2">
                                                         <FileText className="h-6 w-6 text-blue-500"/>
-                                                        <span>{file.name}</span>
+                                                        <span>{file.filename}</span>
                                                     </CardTitle>
                                                 </CardHeader>
                                                 <CardContent>
