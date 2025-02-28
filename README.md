@@ -28,8 +28,8 @@
 
 ### **1⃣ Clone the Repository**
 ```sh
-git clone https://github.com/adam-baker/eve.git
-cd eve
+git clone https://github.com/Adam-Abinsha-vahab-Baker/Eve-by-Adam
+Eve-by-Adam
 ```
 
 ### **2⃣ Install Dependencies**
