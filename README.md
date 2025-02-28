@@ -59,7 +59,7 @@ We **welcome** contributors! 🎉 If you’d like to **enhance Eve**, follow the
 ---
 
 ## 🐟 **License**
-Eve is **open-source** under the **MIT License**. See [LICENSE](LICENSE) for more details.  
+Eve is **open-source** under the **MIT License**.(https://github.com/Adam-Abinsha-vahab-Baker/Eve-by-Adam/LICENCE) See for more details.  
 
 ---
 
